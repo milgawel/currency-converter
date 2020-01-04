@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import NavBar from 'components/NavBar/NavBar';
+import MainPage from 'layouts/MainPage/MainPage';
+import CalculatorPage from 'layouts/CalculatorPage/CalculatorPage';
+import ConvertPage from 'layouts/ConvertPage/ConvertPage';
+import 'App.css';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-        primary
-      >
-        kkErat diam diam ipsum kasd sit dolore no est, lorem ipsum sit et et. Est kasd sadipscing
-        est voluptua sed erat erat. Sea elitr dolores et duo stet accusam tempor, eirmod at takimata
-        magna sit ipsum consetetur, sanctus ipsum sit dolores lorem. Takimata takimata tempor et
-        elitr duo gubergren sadipscing..
-      </a>
-    </header>
+  <div className="wrapper">
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={MainPage} />
+        <Route path="/convert" component={CalculatorPage} />
+        <Route path="/check" component={ConvertPage} />
+      </Switch>
+    </BrowserRouter>
   </div>
 );
 
