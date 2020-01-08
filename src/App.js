@@ -9,7 +9,7 @@ import 'App.css';
 const App = () => {
   return (
     <div className="wrapper">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <NavBar />
         <Switch>
           <Route exact path="/" component={MainPage} />
