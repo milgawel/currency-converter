@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CurrencyTable from 'components/CurrencyTable/CurrencyTable';
 
 const Content = styled.div`
   margin: auto auto;
@@ -14,7 +15,7 @@ const Content = styled.div`
 const CheckPage = () => {
   return (
     <Content>
-      <h1>tabela wszystkich walut</h1>
+      <CurrencyTable />
     </Content>
   );
 };

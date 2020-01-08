@@ -1,7 +1,11 @@
 {
+  "parser": "babel-eslint",
   "extends": ["airbnb", "prettier", "prettier/react"],
   "globals": { "document": true },
   "rules": {
+    "react/no-unused-state": [1, "never"],
+    "react/destructuring-assignment": [1, "never"],
+    "react/state-in-constructor": [1, "never"],
     "react/jsx-filename-extension": [
       1,
       {
@@ -16,5 +20,8 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
+  },
+  "env": {
+    "browser": true
   }
 }

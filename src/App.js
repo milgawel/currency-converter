@@ -6,17 +6,19 @@ import CalculatorPage from 'layouts/CalculatorPage/CalculatorPage';
 import ConvertPage from 'layouts/ConvertPage/ConvertPage';
 import 'App.css';
 
-const App = () => (
-  <div className="wrapper">
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={MainPage} />
-        <Route path="/convert" component={CalculatorPage} />
-        <Route path="/check" component={ConvertPage} />
-      </Switch>
-    </BrowserRouter>
-  </div>
-);
+const App = () => {
+  return (
+    <div className="wrapper">
+      <BrowserRouter>
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={MainPage} />
+          <Route path="/convert" component={CalculatorPage} />
+          <Route path="/check" component={ConvertPage} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
+};
 
 export default App;
