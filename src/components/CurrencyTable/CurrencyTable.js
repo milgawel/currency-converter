@@ -3,67 +3,100 @@ import styled from 'styled-components';
 
 const Table = styled.div`
   width: 100%;
-  min-height: 100%;
+  max-height: 100%;
   background-color: rgba(232, 123, 123, 0.8);
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: center;
 `;
 
 const ListItem = styled.li`
   display: flex;
+  flex-direction: column;
   list-style: none;
   border: 2px solid black;
-  width: 30%;
+  border-radius: 10px;
+  padding: 1% 2%;
+  margin: 2%;
+  min-width: 5%;
+  background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
+  align-items: center;
 `;
 
-const id = 0;
+const Name = styled.h3``;
+
+const Value = styled.p`
+  margin-top: 10%;
+  font-weight: bold;
+`;
 
 class CurrencyTable extends Component {
   state = {
     base: 4.24,
-    MainCurrencies: [
-      { id: '1', name: 'pln', value: '1' },
-      { id: '2', name: 'gbp', value: '2' },
-      { id: '3', name: 'eur', value: '3' },
-      { id: '4', name: 'usd', value: '4' },
-    ],
+    MainCurrencies: [],
   };
 
   updateMainCurrencies = () => {
     fetch(
-      'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=USD,AUD,CAD,PLN,MXN,GBP,UAH&format=1',
+      'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=EUR,USD,CZK,AUD,CAD,MXN,GBP,UAH,NOK,SEK,CHF,JPY&format=1',
     )
       .then(response => response.json())
-      .then(data => this.convertData(data))
+      .then(data => {
+        this.handleData(data);
+      })
       .catch(err => console.log(err));
+  };
+
+  updateBaseCurrency = () => {
+    fetch(
+      'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=PLN&format=1',
+    )
+      .then(response => response.json())
+      .then(data => {
+        const array = Object.entries(data.rates).map(([k, v]) => ({ name: k, value: v }));
+        this.setState({
+          base: array[0].value,
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  positions = '';
+
+  handleData = data => {
+    const orderedArray = this.convertData(data);
+    this.setState({
+      MainCurrencies: orderedArray,
+    });
   };
 
   convertData = data => {
     const object = data.rates;
-    console.log(object);
-    const array = Object.entries(object).map(([k, v]) => ({ name: k, value: v }));
-    console.log(array);
+    const array = Object.entries(object).map(([k, v]) => ({ id: k, name: k, value: v }));
+    return array;
   };
 
-  // updateAllCurrencies = () => {
-  //   const accessKey = 'db627f33cf55c037a2f4c566d0d3b5cc';
-  //   const base = 'http://data.fixer.io/api/';
+  componentDidMount() {
+    this.updateMainCurrencies();
+    this.updateBaseCurrency();
+  }
 
-  //   fetch(`${base}latest?access_key=${accessKey}`)
-  //     .then(response => console.log(response))
-  //     .catch(err => console.log(err));
-  // };
-
-  positions = this.state.MainCurrencies.map(item => (
-    <ListItem key={item.id}>
-      <h3>{item.name}</h3>
-      <p>{item.value}</p>
-    </ListItem>
-  ));
+  renderPositions = () => {
+    this.positions = this.state.MainCurrencies.map(item => (
+      <ListItem key={item.name}>
+        <Name>{item.name}</Name>
+        <Value>{(item.value / this.state.base).toFixed(4)}</Value>
+      </ListItem>
+    ));
+  };
 
   render() {
+    this.renderPositions();
+
     return (
       <>
         <Table>{this.positions}</Table>
-        <button onClick={this.updateMainCurrencies}>Update data</button>
       </>
     );
   }

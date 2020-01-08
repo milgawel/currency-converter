@@ -7,7 +7,7 @@ const Content = styled.div`
   padding: 2em;
   width: 60%;
   height: 70%;
-  background-color: rgba(17, 105, 225, 0.3);
+  /* background-color: rgba(17, 105, 225, 0.3); */
   border-radius: 2em;
 `;
 
@@ -30,9 +30,9 @@ const MainPage = () => {
     <Content>
       <Title>Witam na mojej stronie</Title>
       <Paragraph>
-        Klikając w zakładkę KURSY WALUT możesz sprawdzić aktualne kursy walut z aktualnymi danymi
-        dostarczonymi przez stronę, a klikając w KALKULATOR możesz przeliczyć wybraną ilość gotówki
-        na wybraną przez siebie walutę.
+        Klikając w zakładkę KURSY WALUT możesz sprawdzić aktualne kursy głównych walut z aktualnymi
+        danymi a klikając w KALKULATOR możesz przeliczyć wybraną ilość gotówki na wybraną przez
+        siebie walutę.
       </Paragraph>
     </Content>
   );
