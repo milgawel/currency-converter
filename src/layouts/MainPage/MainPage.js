@@ -7,7 +7,7 @@ const Content = styled.div`
   padding: 2em;
   width: 60%;
   height: 70%;
-  /* background-color: rgba(17, 105, 225, 0.3); */
+  background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
 `;
 

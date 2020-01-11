@@ -4,6 +4,7 @@ import NavBar from 'components/NavBar/NavBar';
 import MainPage from 'layouts/MainPage/MainPage';
 import CalculatorPage from 'layouts/CalculatorPage/CalculatorPage';
 import ConvertPage from 'layouts/ConvertPage/ConvertPage';
+// import Calc from 'components/Calculator/Calculator';
 import 'App.css';
 
 const App = () => {

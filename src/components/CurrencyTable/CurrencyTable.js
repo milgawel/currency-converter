@@ -4,21 +4,20 @@ import styled from 'styled-components';
 const Table = styled.div`
   width: 100%;
   max-height: 100%;
-  background-color: rgba(232, 123, 123, 0.8);
+  /* background-color: rgba(232, 123, 123, 0.8); */
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
-  align-content: center;
 `;
 
 const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   list-style: none;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 10px;
   padding: 1% 2%;
-  margin: 2%;
+  margin: 2% 3%;
   min-width: 5%;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
   align-items: center;
