@@ -21,6 +21,7 @@ const ListItem = styled.li`
   min-width: 5%;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
   align-items: center;
+  border: 20px solid black;
 `;
 
 const Name = styled.h3``;

@@ -22,19 +22,19 @@ const Object = styled.p`
 `;
 
 const ResultTable = props => {
-  const { baseValue, firstValue, firstName, secondValue, secondName } = props.data;
+  const { amountToConvert, selected1, selected2 } = props.data;
 
-  let result = ((firstValue / baseValue) * (baseValue / secondValue)).toFixed(2);
+  let result = ((amountToConvert / selected1.value) * selected2.value).toFixed(2);
+
   return (
     <ResultDiv>
-      <Object>{firstValue}</Object>
-      <Object>{firstName}</Object>
+      <Object>{amountToConvert}</Object>
+      <Object>{selected1.label}</Object>
       <Object>
-        <i class="fas fa-arrow-right"></i>
+        <i className="fas fa-arrow-right"></i>
       </Object>
-
       <Object>{result}</Object>
-      <Object>{secondName}</Object>
+      <Object>{selected2.label}</Object>
     </ResultDiv>
   );
 };
