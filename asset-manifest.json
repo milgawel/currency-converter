@@ -1,24 +1,27 @@
 {
   "files": {
     "main.css": "/currency-converter/static/css/main.1ad93cbd.chunk.css",
-    "main.js": "/currency-converter/static/js/main.c920ac60.chunk.js",
-    "main.js.map": "/currency-converter/static/js/main.c920ac60.chunk.js.map",
+    "main.js": "/currency-converter/static/js/main.fd42d96f.chunk.js",
+    "main.js.map": "/currency-converter/static/js/main.fd42d96f.chunk.js.map",
     "runtime-main.js": "/currency-converter/static/js/runtime-main.2425c0c0.js",
     "runtime-main.js.map": "/currency-converter/static/js/runtime-main.2425c0c0.js.map",
-    "static/js/2.7e43c8a3.chunk.js": "/currency-converter/static/js/2.7e43c8a3.chunk.js",
-    "static/js/2.7e43c8a3.chunk.js.map": "/currency-converter/static/js/2.7e43c8a3.chunk.js.map",
+    "static/css/2.d58fcd6a.chunk.css": "/currency-converter/static/css/2.d58fcd6a.chunk.css",
+    "static/js/2.c6b82026.chunk.js": "/currency-converter/static/js/2.c6b82026.chunk.js",
+    "static/js/2.c6b82026.chunk.js.map": "/currency-converter/static/js/2.c6b82026.chunk.js.map",
     "index.html": "/currency-converter/index.html",
-    "precache-manifest.ec24e6bb3cedaedc1bf328aaf1487abd.js": "/currency-converter/precache-manifest.ec24e6bb3cedaedc1bf328aaf1487abd.js",
+    "precache-manifest.6c6df59ff13f01d90ffe5e855ebc771e.js": "/currency-converter/precache-manifest.6c6df59ff13f01d90ffe5e855ebc771e.js",
     "service-worker.js": "/currency-converter/service-worker.js",
+    "static/css/2.d58fcd6a.chunk.css.map": "/currency-converter/static/css/2.d58fcd6a.chunk.css.map",
     "static/css/main.1ad93cbd.chunk.css.map": "/currency-converter/static/css/main.1ad93cbd.chunk.css.map",
-    "static/js/2.7e43c8a3.chunk.js.LICENSE": "/currency-converter/static/js/2.7e43c8a3.chunk.js.LICENSE",
+    "static/js/2.c6b82026.chunk.js.LICENSE": "/currency-converter/static/js/2.c6b82026.chunk.js.LICENSE",
     "static/media/logo.png": "/currency-converter/static/media/logo.5621c2a3.png",
     "static/media/App.css": "/currency-converter/static/media/money.0e18f564.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.2425c0c0.js",
-    "static/js/2.7e43c8a3.chunk.js",
+    "static/css/2.d58fcd6a.chunk.css",
+    "static/js/2.c6b82026.chunk.js",
     "static/css/main.1ad93cbd.chunk.css",
-    "static/js/main.c920ac60.chunk.js"
+    "static/js/main.fd42d96f.chunk.js"
   ]
 }
