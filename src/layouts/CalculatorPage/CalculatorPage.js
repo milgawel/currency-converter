@@ -11,7 +11,6 @@ const Content = styled.div`
   min-height: 25%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
-  border: 2px solid black;
 `;
 
 const FirstCurrency = styled.div`
