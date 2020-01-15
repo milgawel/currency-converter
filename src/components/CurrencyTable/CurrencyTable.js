@@ -6,7 +6,7 @@ const Table = styled.div`
   max-height: 100%;
   /* background-color: rgba(232, 123, 123, 0.8); */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;
 
@@ -17,11 +17,10 @@ const ListItem = styled.li`
   border: 2px solid white;
   border-radius: 10px;
   padding: 1% 2%;
-  margin: 2% 3%;
-  min-width: 5%;
+  margin: 2% 2%;
+  min-width: 10%;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
   align-items: center;
-  border: 20px solid black;
 `;
 
 const Name = styled.h3``;
@@ -39,7 +38,8 @@ class CurrencyTable extends Component {
 
   updateMainCurrencies = () => {
     fetch(
-      'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=EUR,USD,CZK,AUD,CAD,MXN,GBP,UAH,NOK,SEK,CHF,JPY&format=1',
+      // 'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=EUR,USD,CZK,AUD,CAD,MXN,GBP,UAH,NOK,SEK,CHF,JPY&format=1',
+      'https://api.exchangeratesapi.io/latest',
     )
       .then(response => response.json())
       .then(data => {
@@ -50,7 +50,8 @@ class CurrencyTable extends Component {
 
   updateBaseCurrency = () => {
     fetch(
-      'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=PLN&format=1',
+      // 'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=PLN&format=1'
+      'https://api.exchangeratesapi.io/latest?base=EUR',
     )
       .then(response => response.json())
       .then(data => {
@@ -66,14 +67,26 @@ class CurrencyTable extends Component {
 
   handleData = data => {
     const orderedArray = this.convertData(data);
+    orderedArray.splice(20);
     this.setState({
       MainCurrencies: orderedArray,
     });
   };
 
+  compare = (a, b) => {
+    let comparison = 0;
+    if (a.name > b.name) {
+      comparison = 1;
+    } else if (a.name < b.name) {
+      comparison = -1;
+    }
+    return comparison;
+  };
+
   convertData = data => {
     const object = data.rates;
-    const array = Object.entries(object).map(([k, v]) => ({ id: k, name: k, value: v }));
+    const array = Object.entries(object).map(([k, v]) => ({ name: k, value: v, id: k }));
+    array.sort(this.compare);
     return array;
   };
 
@@ -86,7 +99,7 @@ class CurrencyTable extends Component {
     this.positions = this.state.MainCurrencies.map(item => (
       <ListItem key={item.name}>
         <Name>{item.name}</Name>
-        <Value>{(item.value / this.state.base).toFixed(4)}</Value>
+        <Value>{(item.value / this.state.base).toFixed(3)}</Value>
       </ListItem>
     ));
   };

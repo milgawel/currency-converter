@@ -34,17 +34,30 @@ class CalculatorPage extends Component {
     });
   };
 
-  _onSelect1 = option => {
+  onSelect1 = option => {
     this.setState({ selected1: option });
   };
-  _onSelect2 = option => {
+  onSelect2 = option => {
     this.setState({ selected2: option });
   };
 
   id = 0;
 
+  compare = (a, b) => {
+    let comparison = 0;
+    if (a.label > b.label) {
+      comparison = 1;
+    } else if (a.label < b.label) {
+      comparison = -1;
+    }
+    return comparison;
+  };
+
   fetchData = () => {
-    fetch('http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&format=1')
+    fetch(
+      // 'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&format=1'
+      'https://api.exchangeratesapi.io/latest',
+    )
       .then(response => response.json())
       .then(data => {
         const array = Object.entries(data.rates).map(([k, v]) => ({
@@ -52,6 +65,7 @@ class CalculatorPage extends Component {
           value: v,
           label: k,
         }));
+        array.sort(this.compare);
         this.setState({
           options: array,
         });
@@ -61,7 +75,6 @@ class CalculatorPage extends Component {
 
   componentDidMount() {
     this.fetchData();
-    console.log('fetchdata componentdidmount');
   }
 
   render() {
@@ -75,13 +88,13 @@ class CalculatorPage extends Component {
             onChange={this.handleAmountChange}
           />
           <DropdownList
-            change={this._onSelect1}
+            change={this.onSelect1}
             value={this.state.selected1}
             state={this.state}
             options={this.state.options}
           />
           <DropdownList
-            change={this._onSelect2}
+            change={this.onSelect2}
             value={this.state.selected2}
             state={this.state}
             options={this.state.options}
