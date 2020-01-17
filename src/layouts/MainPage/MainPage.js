@@ -5,18 +5,20 @@ const Content = styled.div`
   margin: auto auto;
   margin-top: 5%;
   padding: 2em;
-  width: 60%;
-  height: 70%;
+  width: 70%;
+  max-height: 70%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
 `;
 
 const Title = styled.h1`
-  z-index: 1;
-  position: relative;
-  width: 60%;
-  margin: 10vh auto;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* position: relative; */
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  /* text-align: center; */
 `;
 
 const Paragraph = styled.p`

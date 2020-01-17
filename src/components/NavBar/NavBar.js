@@ -3,23 +3,35 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import ButtonIcon from 'components/ButtonIcon/ButtonIcon';
 import LogoIcon from 'assets/logo.png';
+import DropdownNavbar from 'components/DropdownNavbar/DropdownNavbar';
 
 const Navigation = styled.div`
   width: 100%;
-  height: 10vh;
+  height: 70px;
   display: flex;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
+  @media (max-width: 920px) {
+    height: 55px;
+  }
 `;
 
 const Logo = styled(NavLink)`
   display: block;
   width: 250px;
-  height: 10vh;
+  height: 50px;
   background-image: url(${LogoIcon});
   background-repeat: no-repeat;
-  background-size: 110%;
-  margin: 1vh 50px;
+  background-size: 260px 50px;
+  margin: 10px auto;
+  margin-left: 40px;
   border: none;
+  @media (max-width: 920px) {
+    width: 200px;
+    height: 50px;
+    background-size: 205px 40px;
+    margin: 7px auto;
+    margin-left: 25px;
+  }
 `;
 
 const NavList = styled.ul`
@@ -30,6 +42,9 @@ const NavList = styled.ul`
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+  @media (max-width: 719px) {
+    display: none;
+  }
 `;
 
 const NavBar = () => {
@@ -53,6 +68,7 @@ const NavBar = () => {
           </ButtonIcon>
         </li>
       </NavList>
+      <DropdownNavbar />
     </Navigation>
   );
 };

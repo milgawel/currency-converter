@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import ResultTable from 'components/ResultTable/ResultTable';
 import DropdownList from 'components/DropdownList/DropdownList';
 
@@ -83,7 +82,7 @@ class CalculatorPage extends Component {
         <FirstCurrency>
           <input
             type="number"
-            placeholder="podaj ilość"
+            placeholder="ilość"
             value={this.state.amountToConvert}
             onChange={this.handleAmountChange}
           />
@@ -107,12 +106,3 @@ class CalculatorPage extends Component {
 }
 
 export default CalculatorPage;
-
-ResultTable.propTypes = {
-  baseValue: PropTypes.number,
-  baseName: PropTypes.string,
-  firstValue: PropTypes.number,
-  firstName: PropTypes.string,
-  secondValue: PropTypes.number,
-  secondName: PropTypes.string,
-};

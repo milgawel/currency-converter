@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const Table = styled.div`
   width: 100%;
-  max-height: 100%;
-  /* background-color: rgba(232, 123, 123, 0.8); */
+  min-height: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  overflow: auto;
 `;
 
 const ListItem = styled.li`
@@ -18,7 +18,7 @@ const ListItem = styled.li`
   border-radius: 10px;
   padding: 1% 2%;
   margin: 2% 2%;
-  min-width: 10%;
+  min-width: 16%;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
   align-items: center;
 `;
@@ -39,11 +39,12 @@ class CurrencyTable extends Component {
   updateMainCurrencies = () => {
     fetch(
       // 'http://data.fixer.io/api/latest?access_key=db627f33cf55c037a2f4c566d0d3b5cc&symbols=EUR,USD,CZK,AUD,CAD,MXN,GBP,UAH,NOK,SEK,CHF,JPY&format=1',
-      'https://api.exchangeratesapi.io/latest',
+      'https://api.exchangeratesapi.io/latest?base=EUR',
     )
       .then(response => response.json())
       .then(data => {
         this.handleData(data);
+        console.log('base update');
       })
       .catch(err => console.log(err));
   };
@@ -57,7 +58,7 @@ class CurrencyTable extends Component {
       .then(data => {
         const array = Object.entries(data.rates).map(([k, v]) => ({ name: k, value: v }));
         this.setState({
-          base: array[0].value,
+          base: array[19].value,
         });
       })
       .catch(err => console.log(err));
@@ -99,7 +100,7 @@ class CurrencyTable extends Component {
     this.positions = this.state.MainCurrencies.map(item => (
       <ListItem key={item.name}>
         <Name>{item.name}</Name>
-        <Value>{(item.value / this.state.base).toFixed(3)}</Value>
+        <Value>{(item.value / this.state.base).toFixed(2)}</Value>
       </ListItem>
     ));
   };

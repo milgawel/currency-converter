@@ -7,7 +7,7 @@ const Content = styled.div`
   margin-top: 3.5%;
   padding: 2em;
   max-width: 75%;
-  max-height: 75%;
+  max-height: 95%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
 `;
