@@ -6,10 +6,13 @@ import LogoIcon from 'assets/logo.png';
 import DropdownNavbar from 'components/DropdownNavbar/DropdownNavbar';
 
 const Navigation = styled.div`
+  position: relative;
+  top: 0;
   width: 100%;
   height: 70px;
   display: flex;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
+  opacity: 0.9;
   @media (max-width: 920px) {
     height: 55px;
   }
