@@ -27,6 +27,7 @@ const ButtonIcon = styled.button`
   &.active {
     animation: ${appear} 0.2s linear forwards;
   }
+
   @media (max-width: 920px) {
     font-size: 1.15em;
   }

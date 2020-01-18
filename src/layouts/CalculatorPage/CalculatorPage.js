@@ -4,12 +4,29 @@ import ResultTable from 'components/ResultTable/ResultTable';
 import DropdownList from 'components/DropdownList/DropdownList';
 
 const Content = styled.div`
-  margin: 4% auto;
-  padding: 2em;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em 2em;
   width: 80%;
   min-height: 25%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
+  border: 2px solid white;
+  @media (max-width: 719px) {
+    padding: 2em 0.5em;
+  }
+`;
+
+const Title = styled.p`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10%;
+  @media (max-width: 719px) {
+    font-size: 1.2em;
+  }
 `;
 
 const FirstCurrency = styled.div`
@@ -17,6 +34,14 @@ const FirstCurrency = styled.div`
   margin: 4% auto;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 719px) {
+    flex-direction: column;
+  }
+`;
+
+const Input = styled.input`
+  height: 3em;
+  overflow-x: scroll;
 `;
 
 class CalculatorPage extends Component {
@@ -79,10 +104,12 @@ class CalculatorPage extends Component {
   render() {
     return (
       <Content>
+        <Title>Podaj ilość i waluty aby przeliczyć ich wartość</Title>
+
         <FirstCurrency>
-          <input
+          <Input
             type="number"
-            placeholder="ilość"
+            placeholder=" Ilość"
             value={this.state.amountToConvert}
             onChange={this.handleAmountChange}
           />

@@ -18,9 +18,13 @@ const ListItem = styled.li`
   border-radius: 10px;
   padding: 1% 2%;
   margin: 2% 2%;
-  min-width: 16%;
+  min-width: 10%;
+  /* max-width: 100px !important; */
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
   align-items: center;
+  @media (max-width: 920px) {
+    min-width: 16%;
+  }
 `;
 
 const Name = styled.h3``;

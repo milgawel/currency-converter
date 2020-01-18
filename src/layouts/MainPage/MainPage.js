@@ -5,7 +5,7 @@ const Content = styled.div`
   margin: auto auto;
   margin-top: 5%;
   padding: 2em;
-  width: 70%;
+  width: 80%;
   max-height: 70%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
@@ -14,11 +14,14 @@ const Content = styled.div`
 const Title = styled.h1`
   display: flex;
   justify-content: center;
-  /* position: relative; */
+  text-align: center;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 10%;
-  /* text-align: center; */
+  @media (max-width: 719px) {
+    margin-bottom: 5%;
+    font-size: 1.5em;
+  }
 `;
 
 const Paragraph = styled.p`

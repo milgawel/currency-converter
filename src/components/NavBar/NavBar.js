@@ -6,13 +6,11 @@ import LogoIcon from 'assets/logo.png';
 import DropdownNavbar from 'components/DropdownNavbar/DropdownNavbar';
 
 const Navigation = styled.div`
-  position: relative;
   top: 0;
   width: 100%;
   height: 70px;
   display: flex;
   background-image: linear-gradient(to bottom right, #1169e1, #87ceeb);
-  opacity: 0.9;
   @media (max-width: 920px) {
     height: 55px;
   }
@@ -34,6 +32,15 @@ const Logo = styled(NavLink)`
     background-size: 205px 40px;
     margin: 7px auto;
     margin-left: 25px;
+  }
+
+  @media (max-width: 719px) {
+    width: 200px;
+    height: 40px;
+    background-size: 170px 35px;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding: 0px 0;
   }
 `;
 
