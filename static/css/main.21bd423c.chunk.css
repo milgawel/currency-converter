@@ -1,0 +1,2 @@
+*,:after,:before{margin:0;padding:0;box-sizing:border-box}div.wrapper{width:100vw;min-height:100vh;font-family:Montserrat,sans-serif;overflow-x:hidden}div.wrapper:after{content:"";background:url(/currency-converter/static/media/money.0e18f564.jpeg);background-repeat:no-repeat;background-position:50%;opacity:.3;top:10vh;left:0;bottom:0;right:0;margin:auto;width:100vw;height:80%;position:absolute;z-index:-99}
+/*# sourceMappingURL=main.21bd423c.chunk.css.map */
