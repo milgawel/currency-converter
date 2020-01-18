@@ -6,7 +6,7 @@ const Content = styled.div`
   margin: auto auto;
   margin-top: 5%;
   padding: 2em;
-  max-width: 80%;
+  width: 80%;
   max-height: 95%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
@@ -14,15 +14,20 @@ const Content = styled.div`
     padding-top: 0.1em;
     padding-bottom: 1em;
     font-size: 0.9em;
+    width: 90%;
+  }
+  @media (max-width: 361px) {
+    width: 95%;
+    padding: 1em;
   }
 `;
 
 const Paragraph = styled.p`
-  margin: 1em auto;
+  margin: 0.5em auto;
   width: 100%;
   text-align: center;
-  font-size: 1.5em;
-  color: black;
+  font-size: 1.4em;
+  font-weight: 500;
 `;
 
 const CheckPage = () => {

@@ -9,6 +9,12 @@ const Content = styled.div`
   max-height: 70%;
   background-color: rgba(17, 105, 225, 0.3);
   border-radius: 2em;
+  @media (max-width: 719px) {
+    width: 90%;
+  }
+  @media (max-width: 321px) {
+    width: 95%;
+  }
 `;
 
 const Title = styled.h1`
@@ -16,8 +22,8 @@ const Title = styled.h1`
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-top: 5%;
-  margin-bottom: 10%;
+
+  margin-bottom: 5%;
   @media (max-width: 719px) {
     margin-bottom: 5%;
     font-size: 1.5em;
@@ -25,9 +31,15 @@ const Title = styled.h1`
 `;
 
 const Paragraph = styled.p`
-  font-size: 1.1em;
+  margin: 2% auto;
+  width: 70%;
+  font-size: 1.2em;
   text-align: center;
   line-height: 1.5em;
+  @media (max-width: 719px) {
+    width: 97%;
+    font-size: 1em;
+  }
 `;
 
 const MainPage = () => {

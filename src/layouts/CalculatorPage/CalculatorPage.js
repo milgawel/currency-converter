@@ -15,15 +15,20 @@ const Content = styled.div`
   border: 2px solid white;
   @media (max-width: 719px) {
     padding: 2em 0.5em;
+    width: 90%;
+  }
+  @media (max-width: 321px) {
+    width: 95%;
   }
 `;
 
 const Title = styled.p`
+  font-size: 1.4em;
+  font-weight: 500;
   display: flex;
   justify-content: center;
   text-align: center;
   width: 100%;
-  margin-bottom: 10%;
   @media (max-width: 719px) {
     font-size: 1.2em;
   }
@@ -40,7 +45,7 @@ const FirstCurrency = styled.div`
 `;
 
 const Input = styled.input`
-  height: 3em;
+  height: 37.5px;
   overflow-x: scroll;
 `;
 

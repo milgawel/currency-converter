@@ -40,7 +40,7 @@ const NavList = styled.ul`
   background-image: linear-gradient(to bottom right, #2a84f9, #87ceeb);
   right: ${props => (props.active ? '0' : '-200px')};
   top: 54px;
-  width: 200px;
+  width: 180px;
   height: 150px;
   border: 4px solid white;
   border-top-left-radius: 30px;
@@ -48,6 +48,10 @@ const NavList = styled.ul`
   list-style: none;
   position: relative;
   z-index: 999;
+  @media (max-width: 321px) {
+    width: 175px;
+    font-size: 1em;
+  }
 `;
 
 class DropDownNavbar extends Component {
