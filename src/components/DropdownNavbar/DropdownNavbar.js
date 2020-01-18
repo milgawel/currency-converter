@@ -52,7 +52,7 @@ const NavList = styled.ul`
 
 class DropDownNavbar extends Component {
   state = {
-    active: true,
+    active: false,
   };
 
   handleChange = () => {
